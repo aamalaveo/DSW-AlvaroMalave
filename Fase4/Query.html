@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks CSS, Posicionamiento Web</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- Latest compiled and minified CSS -->
+ <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+
+
+</head>
+
+
+<body>
+
+
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">UNAD</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li><a href="#">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Temas <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">FlexBox</a></li>
+            <li><a href="#">CSS Grid</a></li>
+
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recursos Digitales <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Videos FlexBox</a></li>
+            <li><a href="#">Videos CSS Grid</a></li>
+
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Aprendizaje<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="aprendizaje1.html">Aprendizaje 1</a></li>
+            <li><a href="aprendizaje2.html">Aprendizaje 2</a></li>
+
+          </ul>
+        </li>
+
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Nuevo<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="Query.html">Query</a></li>
+            <li><a href="SEO.html">Aprendizaje 2</a></li>
+
+          </ul>
+        </li>
+
+
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<h1>Query</h1>
+<main class="container">
+
+
+  <meta itemprop="datePublished" content="2015-01-07">
+  <p class="Article-date">
+    <dw-icon icon="today"></dw-icon>
+    <span class="Article-datetext" itemprop="dateModified" content="2019-11-27">
+      <b class="Article-updated">Última actualización:</b> 27 de November de 2019
+    </span>
+  </p>
+
+  <p class="Article-description">
+    <b>Las Media Queries son una de las principales novedades de CSS3. Estas construcciones del lenguaje CSS permiten definir estilos condicionales, aplicables únicamente en determinadas situaciones. Conoce todos los detalles de las mediaqueries CSS.</b>
+  </p>
+
+  <div class="Article-content">
+  <p>
+En una traducción rápida, las Media Queries de CSS (o CSS mediaqueries) son, consultas sobre las características del medio donde se está visualizando una web. Nos sirven para definir estilos condicionales, que solo se aplicarán en caso que esa consulta del medio sea satisfactoria.
+</p>
+
+<p>
+Son una de las herramientas fundamentales para implementar el "Responsive Web Design" y han llegado de la mano de las <a href="https://desarrolloweb.com/manuales/css3.html">CSS3</a>, convirtiéndose en un aliado fundamental de cualquier diseñador web.
+</p>
+
+<p>
+En la mayoría de los casos las Media Queries sirven para definir estilos diferentes para distintos tamaños de la pantalla. Son sencillas de entender y aplicar, aunque a decir verdad el estándar es bastante sofisticado. Nos ofrecen muchas posibilidades a la hora de aplicar estilos condicionales, con múltiples casos de uso, algunos no tan habituales en el mundo del diseño actual, pero que podrán tener su protagonismo en algún momento.
+</p>
+
+<p>
+<div class=nota><b>Nota:</b> A modo de curiosidad, pues realmente no se usa mucho en el diseño actual, las media queries pueden decirnos si el dispositivo tiene una relación de pantalla 4:3 o 16:9, o una profundidad de color dada, por ejemplo. En este artículo nos encargaremos de conocer los casos más comunes de uso y más adelante nos adentraremos en estas otras características adicionales.</div>
+</p>
+
+<p><img src="../../archivoimg/general/3160.jpg"></p>
+
+<p>
+<h2>Mediaqueries: un paso al frente en las CSS</h2>
+</p>
+
+<p>
+Las Media Queries representan una evolución importante de CSS, puesto que suponen la primera estructura condicional en el lenguaje. Sabemos que CSS no es un lenguaje de programación, ni tiene motivos para parecerse a ello, pero existen muchas cosas que se implementan en los lenguajes de programación y que nos vendrían bien en el desarrollo con CSS, como es el caso de los condicionales.
+</p>
+
+<p>
+<i>"Si ocurre ésto, entonces haz tal cosa"</i>
+</p>
+
+<p>
+Una construcción condicional como esta es tan útil y básica que, aunque CSS no sea un lenguaje de programación, necesitaba incorporarlas. Ejemplos de casos en los que nos vendría bien un condicional:
+</p>
+
+<p>
+- Si la pantalla del usuario tiene estas características, entonces aplica estos estilos
+<br>
+- Si se imprime el documento en la impresora, aplica estos estilos.
+<br>
+- Si la pantalla del dispositivo tiene estas dimensiones y además está situado en posición horizontal (landscape), entonces aplica este CSS.
+</p>
+
+<p>
+Situaciones como esas son básicas y los diseñadores pueden resolverlas usando las MediaQueries. Son un paso al frente en cuanto a la separación entre el contenido y su representación, puesto que nos facilitan que el contenido de una página pueda adaptarse al medio donde se está reproduciendo, sólo a través de la definición de estilos, sin tener que tocar el HTML para nada.
+</p>
+
+<p>
+<h2>Alternativas para implementar Media Queries</h2>
+</p>
+
+<p>
+Aunque la utilidad es novedosa, la sintaxis es parecida a lo que ya conocemos de las CSS, por lo que nos resultará bien sencilla.
+</p>
+
+<p>
+Para producir Media Queries debemos tener siempre en mente la expresión condicional, aquella que debe cumplirse para que se apliquen ciertos estilos. Además la expresión condicional puede tener incluso varias condiciones, usando operadores lógicos como "and" para combinarlas. De modo que las circunstancias que se deban cumplir para aplicar unas reglas CSS sean de lo más variadas.
+</p>
+
+<h3>Alternativa 1: Aplicación de mediaqueries por la etiqueta LINK</h3>
+<p>
+  La primera alternativa de las MediaQueries es a través del atributo media de la etiqueta LINK. Como sabemos, esa etiqueta es la que se usa para enlazar una hoja de estilo con un documento HTML. En ese enlace podemos especificar condicionales que deben cumplirse para que los estilos enlazados se apliquen. Por ejemplo, que se esté imprimiendo un documento o que la pantalla tenga cierta anchura mínima.
+</p>
+
+<p>
+Recordamos, la etiqueta LINK tiene esta forma:
+</p>
+
+<p>
+<pre class="language-css"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;estilos-generales.css&quot;&gt;</code></pre>
+</p>
+
+<p>
+Pues ahora simplemente le podemos agregar el atributo "media" indicando la condición que se debe cumplir para que estos estilos se apliquen:
+</p>
+
+<p>
+<pre class="language-css"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;estilo-imprimir.css&quot; media=&quot;print&quot;&gt;</code></pre>
+</p>
+
+<p>
+Este atributo media="print" quiere decir que los estilos deben aplicarse sólo cuando la página se están mostrando para la impresión.
+</p>
+
+<p>
+<div class=nota><b>Nota:</b> Este uso ya lo vimos anteriormente en el artículo <a href="https://desarrolloweb.com/articulos/css-para-imprimir-pagina-web.html">Estilos específicos para impresión</a>.</div>
+</p>
+
+<p>
+<pre class="language-css"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;estilo-pantallas-grandes.css&quot; media=&quot;(min-width:1200px)&quot;&gt;</code></pre>
+</p>
+
+<p>
+Este uso será seguramente más novedoso para ti. Quiere decir que esos estilos deben aplicarse sólo cuando la pantalla del usuario (los píxeles de anchura de la pantalla de un móvil o, en caso de ordenadores de escritorio, la anchura de la ventana del navegador) tenga una anchura mínima de 1200 píxeles.
+</p>
+
+<p>
+El problema de escribir tus Media Queries así es que tienes archivos de CSS separados. Es decir, aquellos estilos para impresión o para pantallas de 1200px están en archivos independientes, lo que es sencillo de administrar para nosotros, pero una mala práctica en términos de optimización de la web, puesto que se tienen que realizarse varias solicitudes al servidor distintas para traerse los CSS. En la práctica ralentiza la carga de la página en relación a hacer una única solicitud de un archivo CSS que contenga todo el código de los estilos.
+</p>
+
+<h3>Alternativa 2: Aplicación de mediaqueries mediante @media</h3>
+<p>
+Este método que vamos a ver ahora es más interesante y es el que se usa habitualmente a nivel profesional. Consiste en incorporar los estilos en una construcción @media, donde se apliquen entre llaves todos los estilos que queremos para una consulta de medio dada.
+</p>
+
+
+<pre class="language-css"><code>@media (min-width: 500px) {
+    h1{
+        margin: 1%;
+    }
+    .estiloresponsive{
+        float: right;
+        padding-left: 15px;
+    }
+}</code></pre>
+
+<p>
+Como puedes ver, tenemos la sentencia @media en la que podemos indicar entre paréntesis las condiciones que deben cumplirse para que se aplique esta mediaquerie. En este caso será para pantallas que tengan una anchura mínima de 500 píxeles.
+</p>
+
+<p>
+Luego, entre llaves colocamos todas las reglas y atributos de estilos CSS que necesitemos aplicar en esta situación. Las reglas de estilos son las mismas que pondrías fuera de la estructura condicional. Cuando la sentencia entre paréntesis se evalúe como verdadera, se aplicarán todas ellas.
+</p>
+
+<p>
+<h2>Operadores lógicos para las Media Queries</h2>
+</p>
+
+<p>
+Para combinar diversas condiciones podemos usar los operadores lógicos, de una manera similar a como se usan en lenguajes de programación. Los que tenemos disponibles son:
+</p>
+
+<p>
+<ul>
+<b><li>Operador and:</b> las dos condiciones deben cumplirse para que se evalúe como verdadera.
+<br>
+<b><li>Operador not:</b> es una negación de una condición. Cuando esa condición no se cumpla se aplicarán las media queries.
+<br>
+<b><li>Operador only:</b> se aplican las reglas solo en el caso que se cunpla cierta circunstancia.
+<br>
+<b><li>Operador or:</b> no existe como tal, pero puedes poner varias condiciones separadas por comas y cuando se cumpla cualquiera de ellas, se aplicarán los estilos de las media queries.
+</ul>
+</p>
+
+
+<pre class="language-css"><code>@media (max-width: 600px) and (orientation: landscape) {
+    h1{
+        color: red;
+    }
+}</code></pre>
+
+<p>
+Esta regla se aplicaría para pantallas con una anchura máxima de 600 píxeles y cuando la orientación está en horizontal.
+</p>
+
+
+<div class="nota"><b>Nota:</b> Ten en cuenta que la mayoría de smartphones simulan tamaños de pantalla mayores, haciendo una especie de dimensiones virtuales que faciliten la lectura de webs que no están diseñadas para Responsive Web Design. Por ello, lo más seguro es que tengas que poner el "viewport" en el documento HTML a algo como:
+
+  <pre class="language-css"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;</code></pre>
+
+Sin ese viewport tu móvil simularía que tiene unas dimensiones de unos 980 píxeles, cuando quizás la pantalla solo tenga una anchura real de 320 o 500 píxeles. Este asunto ya se explicó con detalle en el <a href="https://desarrolloweb.com/articulos/etiqueta-meta-viewport.html">artículo sobre el viewport</a>.
+</div>
+
+
+<p>
+Para ver en funcionamiento la parte del orientation (landscape o portrait), tienes que usar un móvil o tablet y cambiar la posición de la pantalla, para que esté en horizontal o vertical.
+  </p><p>
+Ten en cuenta que, si estás visualizando la página en un navegador de un ordenador de escritorio, lo más seguro es que no reconozca el cambio de orientación. En ese caso la posición siempre será considerada será landscape.</div>
+</p>
+
+<p>
+<pre class="language-css"><code>@media tv and (min-width: 1200px){
+    h1{
+        margin: 10%;
+    }
+}</code></pre>
+</p>
+
+<p>
+Esta regla aplicaría en dispositivos de tipo televisión y cuya resolución minima de anchura sea de 1200 píxeles.
+</p>
+
+<p>
+  El siguiente ejemplo ilustra un uso del operador OR de mediaqueries, que realmente no existe, sino que se usa la coma, para separar las distintas situaciones en las que se debe aplicar el estilo.
+</p>
+<pre class="language-css"><code>@media (min-width: 600px),  handheld and (orientation: portrait) {
+    h1{
+        color: green;
+    }
+}</code></pre>
+<p>
+Este mediaquery servirá para pantallas de minimas dimensiones 600 píxel y también para todos aquellos dispositivos handheld que estén en posición vertical.
+</p>
+<div class=nota><b>Nota sobre Handheld:</b> Handheld es un término inglés que sirve para especificar aquellos dispositivos que son de mano. Pequeños ordenadores que se llevan en la mano, como los palm o agendas electrónicas que aparecieron antes de popularizarse los smartphones o tablets. Por mis pruebas handheld no aplica a los móviles o tablets.</div>
+</p>
+  <div class="nota"> <b>Nota sobre operador condicional OR:</b>
+  En esta faq puedes encontrar explicaciones adicionales sobre la aplicación del <a href="https://desarrolloweb.com/faq/mediaqueries-con-operacion-logica-de-or">operador OR en las mediaqueries</a>.
+  </div>
+
+  <h2>Conclusión sobre las mediaqueries CSS</h2>
+<p>
+Las Media Queries tienen muchas más posibilidades que no cubrimos con este artículo. Las veremos más adelante, pero sin duda con lo que ahora sabes podrás resolver el 98% de las necesidades que te puedas encontrar en el mundo del diseño web.
+</p>
+<p>
+Si te interesa saber más sobre este tema, en este otro artículo de DesarrolloWeb.com te contamos la <a href="https://desarrolloweb.com/articulos/guias-uso-media-queries-rwd.html">estrategia para aplicar las Media Queries en Responsive Web Design</a>.
+</p>
+  </div>
+
+  <div class="space-bottom">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Articulos inferior -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4078465399592567"
+        data-ad-slot="9491212527"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+      <div class="card-panel z-depth-2 Author">
+  <div class="Author-avatar">
+    <dw-avatar src="/storage/author_images/gEiDZItWEylldVN80K7CKwYKULme3NxNWiWJSpBi.jpeg" alt="Miguel Angel Alvarez">
+  </div>
+  <div class="Author-profile">
+    <p class="Author-profile-name">Miguel Angel Alvarez</p>
+    <p class="Author-profile-description">
+      Fundador de DesarrolloWeb.com y la plataforma de formación online EscuelaIT. Com...
+    </p>
+          <div class="Author-profile-twitter">
+        <a class="twitter-follow-button" href="https://twitter.com/midesweb" rel="nofollow">Follow {{ $author->twitter }}</a>
+      </div>
+
+  </div>
+</div>
+
+
+      <div class="card-panel z-depth-3 Article-datosmanual">
+  <div class="Article-datosmanual-elmanual">
+    <span>
+      <dw-icon icon="book"></dw-icon> Manual
+    </span>
+    <ul>
+      <li><a href="/manuales/css3.html">Manual de CSS 3</a></li>
+    </ul>
+  </div>
+  <div class="sig_ant">
+          <a href="/articulos/sombras-texto-text-shadow-css.html" class="fl red darken">
+        <div class="fl">
+          <dw-icon icon="keyboard_arrow_left"></dw-icon>
+          <span>Sombras en el texto con text-shadow de CSS</span>
+        </div>
+      </a>
+            <a href="/articulos/futuro-diseno-css4.html" class="fr red darken">
+      <div class="fr">
+        <span>Selectores de CSS que quizás no conozcas y debes revisar</span>
+        <dw-icon icon="keyboard_arrow_right"></dw-icon>
+      </div>
+    </a>
+      </div>
+</div>
+  <dw-article-vote votedelement="4667" sumPositive="3" sumNegative="0" >
+      <dw-icon slot="positive" icon="thumb_up"></dw-icon>
+      <dw-icon slot="negative" icon="thumb_down"></dw-icon>
+  </dw-article-vote>
+
+
+
+    </main>
+
+
+  <div class="NavExtended Title margin0">
+  <div class="container">
+    <div class="Panel">
+      <div class="Panel-title">
+        ¿Alguna duda?
+      </div>
+      <div class="Panel-subtitle space-bottom-more">
+        Pregunta y ayuda en la comunidad con tus respuestas en la <a href="/faq">sección de FAQ</a>
+      </div>
+      <div class="Panel-subtitle space-bottom">
+        <a href="/faq-admin/nueva"><dw-button>Hacer una pregunta</dw-button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>
