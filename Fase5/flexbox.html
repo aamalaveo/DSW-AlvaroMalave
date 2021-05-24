@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks CSS, Posicionamiento Web</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+
+
+</head>
+
+
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">UNAD</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Temas <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="flexbox.html">FlexBox</a></li>
+                            <li><a href="csgrid.html">CSS Grid</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recursos Digitales <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="videoflex.html">Videos FlexBox</a></li>
+                            <li><a href="videocss.html">Videos CSS Grid</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Aprendizaje<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="Query.html">Query</a></li>
+                            <li><a href="SEO.html">SEO</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+
+
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="inicio.html">Sobre Mi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xs-12" style="text-align: justify;">
+                Conceptos Básicos de flexbox El Módulo de Caja Flexible, comúnmente llamado flexbox, fue diseñado como un modelo unidimensional de layout, y como un método que pueda ayudar a distribuir el espacio entre los ítems de una interfaz y mejorar las capacidades
+                de alineación. Este artículo hace un repaso de las principales características de flexbox, las que exploraremos con mayor detalle en el resto de estas guías. Cuando describimos a flexbox como unidimensional destacamos el hecho que flexbox
+                maneja el layout en una sola dimensión a la vez — ya sea como fila o como columna. Esto contrasta con el modelo bidimensional del Grid Layout de CSS, el cual controla columnas y filas a la vez.
+                <br><br>
+                <h3>Los dos ejes de flexbox</h3>
+                <p> Cuando trabajamos con flexbox necesitamos pensar en términos de dos ejes — el eje principaly el eje cruzado.<br><br>
+                    <h3> El eje principal</h3>
+                    <p></p> está definido por la propiedad flex-direction, y el eje cruzado es perpendicular a este. Todo lo que hacemos con flexbox está referido a estos dos ejes, por lo que vale la pena entender cómo trabajan desde el principio. El eje
+                    principal El eje principal está definido por flex-direction, que posee cuatro posibles valores:
+                    <ul>
+                        <li>row</li>
+                        <li>row-reverse</li>
+                        <li>column</li>
+                        <li>column-reverse</li>
+                    </ul>
+                    Si elegimos row o row-reverse, el eje principal correrá a lo largo de la fila según la dirección de la línea .
+                    <p>
+                        <center><img src="img/Basics1.png"></center>
+
+                        Al elegir column o column-reverse el eje principal correrá desde el borde superior de la página hasta el final — según la dirección del bloque.
+                        <center><img src="img/Basics2.png"></center>
+                        <p></p>
+                        <h3>El eje cruzado</h3>
+                        El eje cruzado va perpendicular al eje principal, y por lo tanto si flex-direction (del eje principal) es row o row-reverse el eje cruzado irá por las columnas
+                        <center><img src="img/Basics3.png"></center>
+                        Si el eje principal es column o column-reverse entonces el eje cruzado corre a lo largo de las filas.
+                        <center><img src="img/Basics4.png"></center>
+                        Entender cuál eje es cuál es importante cuando empezamos a mirar la alineación y justificación flexible de los ítems; flexbox posee propiedades que permiten alinear y justificar el contenido sobre un eje o el otro.
+                        <h3>Líneas de inicio y de fin</h3>
+                        Otra área vital de entendimiento es cómo flexbox no hace suposiciones sobre la manera de escribir del documento. En el pasado, CSS estaba muy inclinado hacia el modo de escritura horizontal y de izquierda a derecha. Los métodos modernos de layout acogen
+                        la totalidad de modos de escritura así que no es necesario asumir que una línea de texto empezará arriba del documento y correrá de izquierda a derecha, con nuevas líneas dispuestas una abajo de la otra.
+                        <p></p>
+                        Puede leer más acerca de la relación que hay entre flexbox y la especificación de los Modos de Escritura en un artículo posterior, sin embargo la siguiente descripción debería ayudar para explicar porqué no se habla de izquierda y derecha ni de arriba
+                        o abajo a la hora de describir la dirección en la que fluyen los ítems flex.
+                        <p></p>
+                        Si flex-direction es row y estoy trabajando en español, entonces el margen inicial del eje principal quedará a la izquierda, y el margen final a la derecha.
+                        <p></p>
+                        <center><img src="img/Basics5.png"></center>
+                        Si fuera a trabajar en árabe, entonces el margen inicial de mi eje principal quedaría a la derecha y el margen final a la izquierda
+                        <p>
+                            <center><img src="img/Basics6.png"></center>
+                            <p>
+                                En ambos casos el margen inicial del eje cruzado estará en el extremo superior del contenedor flex y el margen final en el extremo inferior, ya que ambos idiomas tiene un modo de escritura horizontal. Después de un tiempo, pensar en inicial y final en
+                                vez de izquierda y derecha se hará natural, y será útil cuando interactúe con otros métodos de layout tales como el CSS Grid Layout que sigue los mismos patrones.
+                            </p>
+                        </p>
+                        <h3>El contenedor flex</h3>
+                        Un área del documento que contiene un flexbox es llamada contendedor flex. Para crear un contenedor flex, establecemos la propiedad del área del contenedor display como flex o inline-flex. Tan pronto como hacemos esto, los hijos directos de este contenedor
+                        se vuelven ítems flex. Como con todas las propiedades de CSS, se definen algunos valores iniciales, así que cuando creemos un contenedor flex todos los ítems flex contenidos se comportarán de la siguiente manera.
+                        <ul>
+
+                            <li> Los ítems se despliegan sobre una fila (la propiedad flex-direction por defecto es row).</li>
+                            <li>Los ítems empiezan desde el margen inicial sobre el eje principal.</li>
+                            <li>Los ítems no se ajustan en la dimensión principal, pero se pueden contraer.</li>
+                            <li>Los ítems se ajustarán para llenar el tamaño del eje cruzado.</li>
+                            <li>La propiedad flex-basis es definida como auto.</li>
+                            <li>La propiedad flex-wrap es definida como nowrap.</li>
+
+                        </ul>
+                        El resultado es que todos los ítems se alinearán en una solo fila, usando el tamaño del contenedor como su tamaño en el eje principal. Si hay más ítems de los que caben en el contenedor, estos no pasarán más abajo si no que sobrepasarán el margen. Si
+                        hay ítems más altos que otros, todos los ítems serán ajustados en el eje cruzado para alcanzar al mayor.
+                        <p></p>
+                        Se puede ver en el ejercicio en vivo de abajo cómo luce. Intente editar el ítem o añadir ítems adicionales para así probar el comportamiento inicial de flexbox.
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
